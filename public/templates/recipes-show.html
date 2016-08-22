@@ -1,0 +1,37 @@
+<div class="col-md-12 text-center" style="padding-left:0; padding-right:0; background-color: #36454f">
+  <ul class="nav" style="background-color: #36454f" >
+	    <li class="nav-links"><a class="links" href="http://localhost:3000/#/">Home</a></li>
+	    <li class="nav-links"><a class="links" href="http://localhost:3000/#/recipes">View Recipes</a></li>
+	    <li class="nav-links"><a class="links" href="#">Share a Recipe</a></li>
+  	</ul>
+  <div class="col-md-12" style="padding-left:0; padding-right:0;">
+  	<div class="col-md-6" style="padding-left:0; padding-right:0">
+	  	<div style="height: 50vh; width:100%; background-image:url('{{recipe.image}}'); background-size:cover; background-repeat:no-repeat;">
+			<div id="recipe-show">	
+				<h2 id="recipe-title">{{recipe.title}}</h2>
+				<p class="recipe-description">"{{recipe.description}}"</p>		
+			</div>
+		</div>
+		<div class="directions-section">
+			<div>
+				<p class="prep-time"><strong>Prep Time:</strong> {{recipe.prep_time}} | <strong>Cook Time:</strong> {{recipe.cook_time}}</p>
+				<hr class="line">	
+				<p class="recipe-directions"><strong>Directions:</strong> {{recipe.directions}}</p>	
+			</div>
+		</div>
+  	</div>		
+	
+	<div class="col-md-6 list-section">	
+	  <div class="ingredients notebook">
+	  	<h3 class="shop-title">Shopping List:</h3>
+	  	<div ng-repeat="ingredient in recipe.ingredients" class="ingredients">
+	  		<hr>
+	  		<input type="checkbox" class="checkbox">
+	  		<p class="ingredient-item">{{ingredient}}</p>
+	  		<hr>
+	  	</div> 
+	  </div>
+	</div>  	
+
+  </div>	
+</div>

@@ -1,0 +1,25 @@
+<div class="text-center">
+	<ul class="nav" style="background-color: #36454f " >
+	    <li class="nav-links"><a class="links" href="http://localhost:3000/#/">Home</a></li>
+	    <li class="nav-links"><a class="links" href="http://localhost:3000/#/recipes">View Recipes</a></li>
+	    <li class="nav-links"><a class="links" href="#">Share a Recipe</a></li>
+  	</ul>
+	<div class="col-md-12">
+		<div class="row">
+			<div ng-repeat="recipe in recipes" class="col-md-3 recipe-full">
+				<a href="/#/recipes/{{recipe.title}}">
+					<div style="height: 350px; width:100%; background-image:url('{{recipe.image}}'); background-size:cover; background-repeat:no-repeat;">
+							<div id="recipe-block">	
+								<h2 id="recipe-title">{{recipe.title}}</h2>	
+							</div>
+					</div>
+				</a>			
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+
+
+

@@ -1,0 +1,35 @@
+<!-- ADD ng-submit to the form -->
+HELLO!
+    <form ng-submit="submit()">
+      <div>
+        <label for="newRecipe-title">Title:</label>
+        <input type="text" id="newTitle-name" ng-model="newRecipe.title" placeholder="Chicken Pot Pie">
+      </div>
+      <div>
+        <label for="newRecipe-image">Image:</label>
+        <input type="text" id="newRecipe-image" ng-model="newRecipe.image" placeholder="Enter image URL..">
+      </div>
+      <div>
+        <label for="newRecipe-description">Description:</label>
+        <input type="text" id="newRecipe-description" ng-model="newRecipe.description" placeholder="Deliciously Rich!">
+      </div>
+      <div>
+        <label for="newRecipe-ingredients">Ingredients:</label>
+        <input type="text" id="newRecipe-ingredients" ng-model="newRecipe.ingredients" placeholder="Corn, beans etc.">
+      </div>
+      <div>
+        <label for="newRecipe-directions">Directions:</label>
+        <input type="text" id="newRecipe-directions" ng-model="newRecipe.directions" placeholder="Set oven to 400F">
+      </div>
+      <div>
+        <label for="newRecipe-prep-time">Prep Time:</label>
+        <input type="text" id="newRecipe-prep_time" ng-model="newRecipe.prep_time" placeholder="10 minutes">
+      </div>
+      <div>
+        <label for="newRecipe-cook-time">Cook Time:</label>
+        <input type="text" id="newRecipe-cook_time" ng-model="newRecipe.cook_time" placeholder="10 minutes">
+      </div>
+      <div>
+        <input type="submit" value="New Recipe">
+      </div>
+    </form>
