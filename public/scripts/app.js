@@ -34,7 +34,7 @@ app.config(function($routeProvider){
 
 ProfileController.$inject = ['$scope','$http'];
 function ProfileController($scope, $http){
-  $http.get('http://localhost:3000/api/profile')
+  $http.get('/api/profile')
     .then(function(response){
         // console.log(response.data);
         $scope.user = response.data; 
@@ -44,7 +44,7 @@ function ProfileController($scope, $http){
 	
 RecipesIndexController.$inject = ['$scope','$http'];
 function RecipesIndexController($scope, $http){
-  $http.get('http://localhost:3000/api/recipes')
+  $http.get('/api/recipes')
     .then(function(response){
     	$scope.recipes = response.data; 
     	console.log($scope.recipes);
@@ -54,7 +54,7 @@ function RecipesIndexController($scope, $http){
 RecipesShowController.$inject = ['$scope', '$http', '$routeParams'];
 function RecipesShowController($scope, $http, $routeParams){
   console.log("show");  
-  $http.get('http://localhost:3000/api/recipes/' + $routeParams.title)
+  $http.get('/api/recipes/' + $routeParams.title)
     .then(function(response) {
         $scope.recipe = response.data;         
         console.log($scope.recipe);
@@ -101,7 +101,7 @@ RecipesNewController.$inject = ['$scope', '$http'];
 
 RecipesDeleteController.$inject = ['$scope', '$http'];
     function RecipesDeleteController($scope, $http, recipe) {
-        $http.delete('http://localhost:3000/api/recipes/' + recipe.title)
+        $http.delete('/api/recipes/' + recipe.title)
         .then(function(response) {
             console.log('deleted a recipe!');
         });
