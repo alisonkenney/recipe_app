@@ -28,36 +28,23 @@
 	background-color: #E79A26;
 }
 
-.links {
-	color: white;
-	font-family:'Raleway', sans-serif;
-}
-
-.nav-links {
-	display: inline-block;
-	margin: 1em 2em 1em 2em;
-}
-
-.nav {
-	background-color: transparent;
-}
-
 #recipe-title {
 	color: white;
 	text-align: center;
 	padding-top: 30%;
 	font-family:'Raleway', sans-serif;
+	font-size: 3.2vh;
 }
 
 #recipe-block {
-	background: rgb(65, 65, 65);
-	background: rgba(65, 65, 65, 0.5);
+	background: rgb(25, 35, 48);
+	background: rgba(25, 35, 48, 0.5);
 	height: 100%;
 }
 
 div#recipe-show {
-	background: rgb(65, 65, 65);
-	background: rgba(65, 65, 65, 0.5);
+	background: rgb(25, 35, 48);
+	background: rgba(25, 35, 48, 0.5);
 	height: 100%;
 }
 
@@ -125,7 +112,7 @@ a:hover {
 .directions-section {
 	height: 65vh; 
 	width:100%; 
-	background-color: #36454f ;"
+	background-color:#192330;
 }
 
 .line {
@@ -151,4 +138,150 @@ a:hover {
 
 .ingredient-item {
 	display:inline-block;
+}
+
+.profile-header {
+	background-image: url('images/profile_header.jpg');
+	height: 50vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+	padding-top: 13%;
+	margin-bottom: 7%; 
+	/*need more bottom margin for mobile*/
+}
+
+.profile-welcome {
+	color: white;
+	background: rgba(25, 35, 48, 0.5);
+	text-align: center;
+	font-family:'Raleway', sans-serif;
+}
+
+.profile-img {
+    position: absolute;
+    left: 50%;
+    margin: 0 0 0 -100px;
+    width: 200px;
+    height: 200px;
+    border: 6px solid white;
+    border-radius: 100px;
+    background-size: cover;
+    bottom: -100px;
+}
+
+.my-recipes {
+	text-align: center;
+	font-family:'Raleway', sans-serif;
+	margin-bottom: 2%;
+}
+
+.edit-delete {
+	margin-left: 7.5%;
+	font-size: 18px;
+	color: #36454f;
+	font-family:'Raleway', sans-serif;
+	display: inline-block;
+	margin-top: 5px;
+}
+
+.facebook-login {
+	background-color: #0072DB;
+	border: solid 3px #0072DB;
+	border-radius: 5px;
+}
+
+.add-form-background {
+	background: url('images/veggies.jpg'); 
+	width: 100%; 
+	display: inline-block; 
+	min-height: 100vh;
+}
+
+.add-recipe-heading {
+	background-color:#192330; 
+	text-align:center;
+	font-size: 30px;
+	padding-top: 10px;
+	color: #d3d3d3;
+	opacity: .9;
+	font-family:'Raleway', sans-serif;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.add-input {
+	width: 100%;
+	height: 45px;
+	padding-left: 8px;
+	background-color:#434B56; 
+	opacity:.95;
+	border: #d3d3d3 2px solid;
+}
+
+::-webkit-input-placeholder {
+   color: #7C838D;
+   font-family:'Raleway', sans-serif;
+}
+
+.btn-delete-ingredient {
+	background-color:#FC7801; 
+	color:#d3d3d3;
+	display: inline-block;
+	margin-bottom: 35px;
+	width: 40px;
+	height: 45px;
+	font-size: 20px;
+	font-family:'Raleway', sans-serif;
+}
+
+.add-recipe-label {
+	margin-top: 20px;
+	color: #cacdd1;
+	font-family:'Raleway', sans-serif;
+}
+
+.recipe-submit-button {
+	background-color: #5bc0de;
+	border: 1px solid #5bc0de;
+	width: 150px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #262C33;
+	font-family:'Raleway', sans-serif;
+}
+
+.add-ingredient-button {
+	background-color:#5bc0de;
+	border: 1px solid #5bc0de;
+	color: #262C33;
+	font-family:'Raleway', sans-serif;
+}
+
+#add-ingredient-textarea {
+	height:45px; 
+	margin-top: 20px; 
+	padding-left: 8px; 
+	width: 90%; 
+	display: inline-block;
+	color: #d3d3d3;
+}
+
+input {
+	color: #d3d3d3;
+}
+
+@media (max-width: 768px) {
+	.profile-header {
+		margin-bottom: 25%;
+	}
+
+	.profile-recipe-img {
+		width: 100%;
+	}
+
+	#add-ingredient-textarea {
+		width: 86%;
+	}
 }

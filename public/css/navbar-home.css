@@ -1,0 +1,21 @@
+.navbar-home {
+	background-color: transparent;
+}
+
+.navbar-home-links {
+	color: white;
+	display: inline-block;
+	padding: 17px 7px 0px 7px;
+	font-family:'Raleway', sans-serif;
+}
+
+.brand-home {
+	color: white;
+	font-family:'Raleway', sans-serif;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#logo-white {
+	height: 50px;
+}
