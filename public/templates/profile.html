@@ -1,0 +1,40 @@
+<ng-include src="'./templates/partials/navbar-login.html'"></ng-include>
+
+<div class="profile-header">
+	<h1 class="profile-welcome col-md-4 offset-sm-4">Welcome {{user.facebook.name}}!</h1>
+	<img class="profile-img" ng-src="{{user.facebook.photos}}">
+</div>
+
+<div class="row">
+	<div class="my-recipes">
+		<h1>My Recipes</h1>
+	</div>
+</div>
+
+<div class="col-md-12">
+		<div class="row profile-recipe-row">
+			<div ng-repeat="recipe in recipes" class="col-md-3 recipe-full">
+				<a href="/#/recipes/{{recipe.title}}">
+					<div style="height: 28vh; width:85%; background-image:url('{{recipe.image}}'); background-size:cover; background-repeat:no-repeat; margin: auto; left:0; right:0;">
+							<div id="recipe-block">	
+								<p id="recipe-title">{{recipe.title}}</p>	
+							</div>
+					</div>
+				</a>
+			<div>
+				<p class="edit-delete"><button class='edit-recipe' ng-click="recipes.editRecipe(recipe)">Edit</button>&nbsp;<button class='delete-recipe' ng-click="recipes.deleteRecipe(recipe.title)">Delete</button></p>
+			</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+

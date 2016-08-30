@@ -1,0 +1,33 @@
+.navbar-login {
+	background-color:#192330;
+	height: 65px;
+}
+
+.brand-login {
+	color: #D3D3D3;
+	font-family:'Raleway', sans-serif;
+	padding-top: 6px;
+	padding-left: 10px;
+}
+
+.nav-profile {
+	text-align: right
+}
+
+.navbar-profile-links {
+	color: #D3D3D3;
+	display: inline-block;
+	padding: 20px 7px 0px 7px;
+	text-align: right;
+	font-family:'Raleway', sans-serif;
+}
+
+#logo-grey {
+	height: 50px;
+}
+
+@media (min-width: 544px) {
+	.navbar {
+		border-radius: 0;
+	}
+}
