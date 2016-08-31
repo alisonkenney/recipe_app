@@ -269,6 +269,11 @@ a:hover {
 	color: #d3d3d3;
 }
 
+.fb-picture {
+	height:400px; 
+	width:400px;
+}
+
 input {
 	color: #d3d3d3;
 }
