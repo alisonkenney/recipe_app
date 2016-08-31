@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:url" content="http://localhost:3000/#/recipes/{{recipe.title}}" />
+    <meta property="og:title" content="{{recipe.title}}" />
+    <meta property="og:description" content="{{recipe.description}}" />
+    <meta property="og:image" content="{{recipe.image}}" />
+
+
     <title>Recipes Finder</title>
     <!-- Sets Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
@@ -16,16 +23,32 @@
     <!-- Sets ViewPort -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Initializes Angular -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
     <!-- Initializes Angular Routes -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
     <!-- Initializes Local Scripts -->
     <script src="scripts/app.js"></script>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '144595975984486',
+          xfbml      : true,
+          version    : 'v2.5'
+        });
+      };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=144595975984486";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
 
-        <div ng-view>
-        </div>
+    <div ng-view></div>
 
   </body>
 </html>

@@ -11,7 +11,7 @@ var cookieParser = require('cookie-parser');
 var db = require('./models');
 var FacebookStrategy = require('passport-facebook').Strategy;  
 var User = require('./models/user');
-
+var Recipe = require('./models/recipe');
 
 //Auth
 
@@ -114,6 +114,34 @@ app.get('/api/recipes/:title', function(req, res) {
   });
 });  
 
+app.put('/api/recipes/:title', function(req, res) {
+  db.User.find(function(err, users){
+      for (var i = 0; i < users.length; i++) { 
+        for(var j = 0; j < users[i].recipes.length; j++) {
+          var current_recipe = users[i].recipes[j];
+          if (current_recipe.title == req.params.title) {
+              // current_recipe = req.body;
+              var user_recipes = users[i].recipes.id(current_recipe.id);
+
+              user_recipes.title = req.body.title;
+              user_recipes.description = req.body.description;
+              user_recipes.image = req.body.image;
+              user_recipes.ingredients = req.body.ingredients;
+              user_recipes.prep_time = req.body.prep_time;
+              user_recipes.cook_time = req.body.cook_time;
+              user_recipes.directions = req.body.directions;
+
+              users[i].save(function(err, user) {
+                // console.log(user);
+                
+                res.json({current_recipe: user.recipes.id(current_recipe.id), title: user_recipes.title});
+              });    
+          }
+        }     
+      } 
+  });
+}); 
+
   // db.Recipe.findOne({title: req.params.title }, function(err, recipe) {
   //   res.json(recipe);
   // });
@@ -141,7 +169,6 @@ app.get('/api/profile', function (req, res) {
   });
 });
 
-
 app.delete('/api/recipes/:title', function destroy(req, res) {
   db.Recipe.remove({title: req.params.title}, function(err) {
     if (err) { return console.log(err); }
@@ -153,7 +180,7 @@ app.delete('/api/recipes/:title', function destroy(req, res) {
 app.get('/logout', function (req, res) {
   delete req.session.passport;
   console.log(req.session);
-  res.json({});
+  // res.json({});
   res.redirect('/#/');
 });
 

@@ -14,18 +14,22 @@
 				<hr class="line">	
 				<p class="recipe-directions"><strong>Directions:</strong> {{recipe.directions}}</p>	
 			</div>
+			<div>
+				<p class="edit-delete"><button class='edit-recipe' ><a ng-href ='/#/recipes/{{recipe.title}}/edit'>Edit</a></button>&nbsp;<button  class='delete-recipe' ng-click='recipes.deleteRecipe(recipe.title)'>Delete</button></p>
+			</div>
 		</div>
   	</div>		
 	
 	<div class="col-md-6 list-section">	
 	  <div class="ingredients notebook">
 	  	<h3 class="shop-title">Shopping List:</h3>
-	  	<div ng-repeat="ingredient in recipe.ingredients" class="ingredients">
-	  		<hr>
-	  		<input type="checkbox" class="checkbox">
-	  		<p class="ingredient-item">{{ingredient}}</p>
-	  		<hr>
-	  	</div> 
+		  	<div ng-repeat="ingredient in recipe.ingredients" class="ingredients">
+		  		<hr>
+		  		<input type="checkbox" class="checkbox">
+		  		<p class="ingredient-item">{{ingredient}}</p>
+		  		<hr>
+		  	</div> 
+		  	<div class="fb-share-button" data-href="https://recipe-findr.herokuapp.com/{{recipe.title}}" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Frecipe-findr.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
 	  </div>
 	</div>  	
 
