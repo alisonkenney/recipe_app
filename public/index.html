@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="RecipesFinder">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta property="og:url" content="http://localhost:3000/#/recipes/{{recipe.title}}" />
-    <meta property="og:title" content="{{recipe.title}}" />
-    <meta property="og:description" content="{{recipe.description}}" />
-    <meta property="og:image" content="{{recipe.image}}" />
+   
 
 
     <title>Recipes Finder</title>
@@ -30,28 +25,7 @@
     <script src="scripts/app.js"></script>
   </head>
   <body>
-    <div id="fb-root"></div>
-    <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-          appId      : process.env.FBCLIENTID,
-          xfbml      : true,
-          version    : 'v2.5'
-        });
-      };
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=144595975984486";
-            fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-             window.fbAsyncInit = function(){  // this gets triggered when FB object gets initialized
-            console.log("FB Object initiated");
-            FB.XFBML.parse(); // now we can safely call parse method
-            };
-        </script>
+    
 
     <div ng-view></div>
 

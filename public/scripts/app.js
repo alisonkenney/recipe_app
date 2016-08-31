@@ -64,6 +64,10 @@ function RecipesShowController($scope, $http, $routeParams){
         $scope.recipe = response.data;         
         console.log($scope.recipe);
     });
+
+    function fbShare() {
+        
+    }
 } 
 
 RecipesNewController.$inject = ['$scope', '$http'];
