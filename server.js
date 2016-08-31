@@ -18,7 +18,7 @@ var Recipe = require('./models/recipe');
 passport.use(new FacebookStrategy({
     clientID: process.env.FBCLIENTID,
     clientSecret: process.env.FBCLIENTSECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: "/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'email', 'picture.type(large)']
   },
   function(accessToken, refreshToken, profile, done) {

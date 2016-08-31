@@ -58,7 +58,7 @@ function RecipesIndexController($scope, $http){
 
 RecipesShowController.$inject = ['$scope', '$http', '$routeParams'];
 function RecipesShowController($scope, $http, $routeParams){
-  // console.log("show");  
+
   $http.get('/api/recipes/' + $routeParams.title)
     .then(function(response) {
         $scope.recipe = response.data;         
