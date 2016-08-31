@@ -3,7 +3,8 @@ var app = angular.module('RecipesFinder', ['ngRoute',])
 	.controller('RecipesShowController', RecipesShowController)
     .controller('RecipesNewController', RecipesNewController)
     .controller('ProfileController', ProfileController)
-    .controller('RecipesDeleteController', RecipesDeleteController);
+    .controller('RecipesDeleteController', RecipesDeleteController)
+    .controller('RecipesUpdateController', RecipesUpdateController);
 
 console.log('Angular is working.');
 
@@ -12,6 +13,10 @@ app.config(function($routeProvider){
   $routeProvider
     .when('/', {
       templateUrl: '/templates/home.html',
+    })
+    .when('/recipes/:title/edit', { // the "id" parameter 
+    templateUrl: '/templates/recipes-edit.html',
+    controller: 'RecipesUpdateController'
     })
     .when('/profile', { 
     templateUrl: '/templates/profile.html',
@@ -47,13 +52,13 @@ function RecipesIndexController($scope, $http){
   $http.get('/api/recipes')
     .then(function(response){
     	$scope.recipes = response.data; 
-    	console.log($scope.recipes);
+    	// console.log($scope.recipes);
     });
  }
 
 RecipesShowController.$inject = ['$scope', '$http', '$routeParams'];
 function RecipesShowController($scope, $http, $routeParams){
-  console.log("show");  
+
   $http.get('/api/recipes/' + $routeParams.title)
     .then(function(response) {
         $scope.recipe = response.data;         
@@ -77,7 +82,7 @@ RecipesNewController.$inject = ['$scope', '$http'];
     $scope.removeIngredient = function(z) {
         $scope.newRecipe.ingredients.splice(z, 1);
     };
-    $scope.sendPost = function() {
+    $scope.sendRecipe = function() {
             var data = JSON.stringify({
                     title: $scope.newRecipe.title,
                     image: $scope.newRecipe.image,
@@ -99,14 +104,48 @@ RecipesNewController.$inject = ['$scope', '$http'];
     };                   
 }
 
+RecipesUpdateController.$inject = ['$scope', '$http', '$routeParams'];
+function RecipesUpdateController($scope, $http, $routeParams) {
+getRecipe();
+$scope.recipeToEdit = {};
+$scope.recipeToEdit.ingredients = [];
+$scope.getRecipe = getRecipe;
+$scope.editRecipe = editRecipe;
+ $scope.addNewIngredient = function() {
+        $scope.recipeToEdit.ingredients.push('');
+};
+    $scope.removeIngredient = function(z) {
+        $scope.recipeToEdit.ingredients.splice(z, 1);
+};
+    
+    function getRecipe(){
+        $http.get('/api/recipes/' + $routeParams.title)
+        .then(function(response) {
+            $scope.recipeToEdit = response.data;
+            });
+    }
+
+    function editRecipe() {
+        $http.put('/api/recipes/' + $routeParams.title, $scope.recipeToEdit)
+            .then(function(response) {
+                var title = response.data.title;
+                var recipe = response.data.current_recipe;
+                window.location.href = ('/#/recipes/' + title);
+            });
+    // console.log($scope.recipeToEdit);
+     }
+    
+}
+
+
 RecipesDeleteController.$inject = ['$scope', '$http'];
     function RecipesDeleteController($scope, $http, recipe) {
         $http.delete('/api/recipes/' + recipe.title)
         .then(function(response) {
-            console.log('deleted a recipe!');
+            // console.log('deleted a recipe!');
         });
         
-    }
+}
 
 
 

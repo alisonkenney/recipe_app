@@ -1,0 +1,82 @@
+<ng-include src="'./templates/partials/navbar-login.html'"></ng-include>
+<!-- ADD ng-submit to the form -->
+<div class="add-form-background">
+  <div style="margin-top: 3em">
+
+      <div class="col-sm-4 offset-sm-4  add-recipe-heading">
+        <p style="margin:0;">Add Your Recipe!</p>
+      </div>
+
+  <div class="col-sm-4 offset-sm-4" style="background-color:#434B56; opacity:.95;">
+    
+    
+      <form ng-submit="editRecipe()">
+
+        <div class="col-sm-12"">
+          <div>
+            <label class="add-recipe-label" for="recipeToEdit-title">Title:</label>
+            <input class="add-input" type="text" id="editTitle-name" ng-model="recipeToEdit.title" placeholder="Chicken Pot Pie">
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+            <label class="add-recipe-label" for="editRecipe-image">Image:</label>
+            <input class="add-input" type="text" id="editRecipe-image" ng-model="recipeToEdit.image" placeholder="Enter image URL..">
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+            <label class="add-recipe-label" for="editRecipe-description">Description:</label>
+            <input class="add-input" type="text" id="editRecipe-description" ng-model="recipeToEdit.description" placeholder="Deliciously Rich!">
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+          <label class="add-recipe-label" for="editRecipe-ingredients">Ingredients:</label>
+          </div>
+          <input type="button" class="btn btn-info add-ingredient-button" ng-click="addNewIngredient()" value="Add Ingredient">
+            <fieldset data-ng-repeat="field in recipeToEdit.ingredients track by $index">
+              <textarea id="add-ingredient-textarea" class="add-input" rows="4" cols="50" ng-model=" recipeToEdit.ingredients[$index]" placeholder="2 lbs of groung chicken"></textarea>
+              <button type="button" class="btn btn-default btn-sm btn-delete-ingredient" ng-click="removeIngredient($index)">
+                <span class="glyphicon glyphicon-minus"></span><p style="margin-top:-3px"> X </p>
+              </button>
+            </fieldset>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+            <label class="add-recipe-label" for="editRecipe-directions">Directions:</label>
+            <input class="add-input" type="text" id="editRecipe-directions" ng-model="recipeToEdit.directions" placeholder="Set oven to 400F">
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+            <label class="add-recipe-label" for="editRecipe-prep-time">Prep Time:</label>
+            <input class="add-input" type="text" id="editRecipe-prep_time" ng-model="recipeToEdit.prep_time" placeholder="10 minutes">
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+            <label class="add-recipe-label" for="editRecipe-cook-time">Cook Time:</label>
+            <input class="add-input" type="text" id="editRecipe-cook_time" ng-model="recipeToEdit.cook_time" placeholder="30 minutes">
+          </div>
+        </div>
+
+        <div class="col-sm-12">
+          <div>
+            <!-- <input class="add-recipe-submit" type="submit" value="Submit"> -->
+            <input type="submit" class="btn btn-info recipe-submit-button"  value="Submit">
+          </div>
+        </div>
+
+      </form>
+
+
+  </div> 
+  </div>
+</div>   

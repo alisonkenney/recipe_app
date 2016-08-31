@@ -10,7 +10,7 @@
   <div class="col-sm-4 offset-sm-4" style="background-color:#434B56; opacity:.95;">
     
     
-      <form ng-submit="sendPost()">
+      <form ng-submit="sendRecipe()">
 
         <div class="col-sm-12"">
           <div>
@@ -37,13 +37,13 @@
           <div>
           <label class="add-recipe-label" for="newRecipe-ingredients">Ingredients:</label>
           </div>
-          <input type="button" class="btn btn-info add-ingredient-button" ng-click="addNewIngredient()" value="Add Ingredient">
             <fieldset data-ng-repeat="field in newRecipe.ingredients track by $index">
               <textarea id="add-ingredient-textarea" class="add-input" rows="4" cols="50" ng-model=" newRecipe.ingredients[$index]" placeholder="2 lbs of groung chicken"></textarea>
               <button type="button" class="btn btn-default btn-sm btn-delete-ingredient" ng-click="removeIngredient($index)">
                 <span class="glyphicon glyphicon-minus"></span><p style="margin-top:-3px"> X </p>
               </button>
             </fieldset>
+            <input type="button" class="btn btn-info add-ingredient-button" ng-click="addNewIngredient()" value="Add Ingredient">
         </div>
 
         <div class="col-sm-12">

@@ -7,7 +7,7 @@
 }
 
 .home-text {
-	padding-top: 100%;
+	padding-top: 45vh;
 	color: white;
 	text-align: center;
 	font-family:'Raleway', sans-serif;
@@ -157,6 +157,7 @@ a:hover {
 	background: rgba(25, 35, 48, 0.5);
 	text-align: center;
 	font-family:'Raleway', sans-serif;
+	font-size: 5vh;
 }
 
 .profile-img {
@@ -263,7 +264,7 @@ a:hover {
 	height:45px; 
 	margin-top: 20px; 
 	padding-left: 8px; 
-	width: 90%; 
+	width: 87%; 
 	display: inline-block;
 	color: #d3d3d3;
 }

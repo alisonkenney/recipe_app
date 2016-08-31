@@ -10,8 +10,6 @@ var RecipeSchema = new Schema({
     	prep_time: String,
     	cook_time: String,
     	directions: String,
-    	// owner: { type: Schema.Types.ObjectId, ref: 'User' }
-    	// facebook_id : { type: Number, ref: 'User' },
 });
 
 var Recipe = mongoose.model('Recipe', RecipeSchema);
