@@ -2,8 +2,12 @@
 <html lang="en" ng-app="RecipesFinder">
   <head>
 
-   
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <meta property="og:url" content="https://recipe-findr.herokuapp.com/Slow%20Cooker%20Mongolian%20Beef" />
+    <meta property="og:title" content="{{recipe.title}}" />
+    <meta property="og:image" content="{{recipe.image}}" />
 
     <title>Recipes Finder</title>
     <!-- Sets Styles -->
@@ -25,7 +29,7 @@
     <script src="scripts/app.js"></script>
   </head>
   <body>
-    
+
 
     <div ng-view></div>
 
