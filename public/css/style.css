@@ -272,6 +272,7 @@ a:hover {
 .fb-picture {
 	height:400px; 
 	width:400px;
+	display: none;
 }
 
 input {
