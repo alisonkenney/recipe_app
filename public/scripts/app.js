@@ -5,6 +5,7 @@ var app = angular.module('RecipesFinder', ['ngRoute',])
     .controller('ProfileController', ProfileController)
     .controller('RecipesDeleteController', RecipesDeleteController)
     .controller('RecipesUpdateController', RecipesUpdateController)
+    .controller('FacebookMetaController', FacebookMetaController)
     .factory('facebook', function(){
         var facebook = {};
 
