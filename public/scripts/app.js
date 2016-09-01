@@ -4,7 +4,12 @@ var app = angular.module('RecipesFinder', ['ngRoute',])
     .controller('RecipesNewController', RecipesNewController)
     .controller('ProfileController', ProfileController)
     .controller('RecipesDeleteController', RecipesDeleteController)
-    .controller('RecipesUpdateController', RecipesUpdateController);
+    .controller('RecipesUpdateController', RecipesUpdateController)
+    .factory('facebook', function(){
+        var facebook = {};
+
+        return facebook;
+    });
 
 console.log('Angular is working.');
 
@@ -56,18 +61,24 @@ function RecipesIndexController($scope, $http){
     });
  }
 
-RecipesShowController.$inject = ['$scope', '$http', '$routeParams'];
-function RecipesShowController($scope, $http, $routeParams){
+FacebookMetaController.$inject = ['$scope', 'facebook'];
+function FacebookMetaController($scope, facebook){
+    $scope.facebook = facebook;
+
+ }
+
+RecipesShowController.$inject = ['$scope', '$http', '$routeParams', 'facebook'];
+function RecipesShowController($scope, $http, $routeParams, facebook){
 
   $http.get('/api/recipes/' + $routeParams.title)
     .then(function(response) {
-        $scope.recipe = response.data;         
+        $scope.recipe = response.data;   
+        facebook.title = encodeURI('$scope.recipe.title');
+        facebook.image = $scope.recipe.image; 
+        facebook.description = $scope.recipe.description;         
         console.log($scope.recipe);
     });
 
-    function fbShare() {
-        
-    }
 } 
 
 RecipesNewController.$inject = ['$scope', '$http'];
