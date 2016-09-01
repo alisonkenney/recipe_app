@@ -183,8 +183,12 @@ a:hover {
 	font-size: 18px;
 	color: #36454f;
 	font-family:'Raleway', sans-serif;
-	display: inline-block;
 	margin-top: 5px;
+	background-color: #5bc0de
+	border: solid 1px #5bc0de;
+	border-radius: 5px;
+	width: 150px;
+	height: 40px;
 }
 
 .facebook-login {
