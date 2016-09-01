@@ -77,7 +77,7 @@ function RecipesShowController($scope, $http, $routeParams, facebook){
         facebook.title = encodeURI($scope.recipe.title);
         facebook.image = $scope.recipe.image; 
         facebook.description = $scope.recipe.description;         
-        console.log(facebook);
+        // console.log(facebook);
     });
 
 } 
