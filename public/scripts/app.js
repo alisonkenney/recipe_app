@@ -74,6 +74,7 @@ function RecipesShowController($scope, $http, $routeParams, facebook){
   $http.get('/api/recipes/' + $routeParams.title)
     .then(function(response) {
         $scope.recipe = response.data;   
+        $scope.encodedTitle = encodeURI($scope.recipe.title);
         facebook.title = encodeURI($scope.recipe.title);
         facebook.image = $scope.recipe.image; 
         facebook.description = $scope.recipe.description;         
