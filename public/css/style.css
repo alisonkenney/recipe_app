@@ -179,12 +179,12 @@ a:hover {
 }
 
 .edit-button {
-	margin-left: 7.5%;
+	margin-left: 10px;
 	font-size: 18px;
 	color: #36454f;
 	font-family:'Raleway', sans-serif;
 	margin-top: 5px;
-	background-color: #5bc0de
+	background-color: #5bc0de;
 	border: solid 1px #5bc0de;
 	border-radius: 5px;
 	width: 150px;
