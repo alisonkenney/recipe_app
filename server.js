@@ -152,16 +152,11 @@ app.post('/api/recipes', function (req, res) {
   var recipe = new db.Recipe(req.body);
   var session = req.session;
   recipe.save(function(err) {
-    if (!session.passport.user) {
-      res.send("error");
-    }else {
        db.User.findById(session.passport.user, function (err, user) {
           user.recipes.push(recipe);
           user.save();
           res.send(user);  
-      }); 
-    }
-     
+      });   
   });  
 }); 
 
