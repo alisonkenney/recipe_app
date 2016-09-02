@@ -111,11 +111,11 @@ RecipesNewController.$inject = ['$scope', '$http'];
                     cook_time: $scope.newRecipe.cook_time
                 });
            
-            console.log(data);
+            // console.log(data);
 
         $http.post('/api/recipes/', data)
             .then(function(response) {
-                console.log(response);
+                // console.log(response);
                 window.location.href = '/#/profile';
                 
         });
