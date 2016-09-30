@@ -16,7 +16,7 @@
 				<hr class="line">	
 				<p class="recipe-directions"><strong>Directions:</strong> {{recipe.directions}}</p>	
 			</div>
-			<div>
+			<div ng-if="user != undefined" >
 				<p><button class='edit-button' ><a ng-href ='/#/recipes/{{recipe.title}}/edit'>Edit</a></button></p>
 			</div>
 		</div>

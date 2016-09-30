@@ -82,6 +82,13 @@ function RecipesShowController($scope, $http, $routeParams, facebook){
         console.log($scope.encodedTitle);
     });
 
+    $http.get('/api/profile')
+    .then(function(response){
+        // console.log(response.data);
+        $scope.user = response.data; 
+        $scope.recipes = $scope.user.recipes;
+    });
+
 } 
 
 RecipesNewController.$inject = ['$scope', '$http'];
