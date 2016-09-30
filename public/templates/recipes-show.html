@@ -1,7 +1,8 @@
 
 <div class="col-md-12 text-center" style="padding-left:0; padding-right:0; background-color:#192330;">
  {{facebook.title}}
-    <ng-include src="'./templates/partials/navbar-login.html'"></ng-include>
+    <ng-include ng-if="user != undefined" src="'./templates/partials/navbar-login.html'"></ng-include>
+    <ng-include ng-if="user === undefined" src="'./templates/partials/navbar-loggedout.html'"></ng-include>
   <div class="col-md-12" style="padding-left:0; padding-right:0;">
   	<div class="col-md-6" style="padding-left:0; padding-right:0">
 	  	<div style="height: 50vh; width:100%; background-image:url('{{recipe.image}}'); background-size:cover; background-repeat:no-repeat;">
@@ -36,7 +37,7 @@
 		data-href="https://recipe-findr.herokuapp.com/#/recipes" 
 		data-layout="button">
 	</div> -->
-	<div class="fb-share-button" data-href="http://recipe-findr.herokuapp.com/#/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frecipe-findr.herokuapp.com%2F%23%2Frecipes&amp;src=sdkpreparse">Share</a></div>
+	<div ng-if="user != undefined" class="fb-share-button" data-href="http://recipe-findr.herokuapp.com/#/recipes" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frecipe-findr.herokuapp.com%2F%23%2Frecipes&amp;src=sdkpreparse">Share</a></div>
 
 
   </div>	

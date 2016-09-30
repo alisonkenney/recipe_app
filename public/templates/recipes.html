@@ -1,4 +1,10 @@
-<ng-include src="'./templates/partials/navbar-login.html'"></ng-include>
+<div ng-if="user != undefined">
+	<ng-include src="'./templates/partials/navbar-login.html'"></ng-include>
+</div>	
+
+<div ng-if="user === undefined">
+	<ng-include src="'./templates/partials/navbar-loggedout.html'"></ng-include>
+</div>	
 
 	<div class="col-md-12">
 		<div class="row">
